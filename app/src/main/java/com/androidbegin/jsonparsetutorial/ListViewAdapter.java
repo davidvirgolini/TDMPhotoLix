@@ -67,8 +67,8 @@ public class ListViewAdapter extends BaseAdapter {
 		flag = (ImageView) itemView.findViewById(R.id.flag);
 
 		// Capture position and set results to the TextViews
-		rank.setText(resultp.get(MainActivity.RANK));
-		country.setText(resultp.get(MainActivity.COUNTRY));
+		rank.setText(resultp.get(MainActivity.TITLE));
+		country.setText(resultp.get(MainActivity.DESCRIPTION));
 		population.setText(resultp.get(MainActivity.POPULATION));
 		// Capture position and set results to the ImageView
 		// Passes flag images URL into ImageLoader.class
@@ -82,9 +82,9 @@ public class ListViewAdapter extends BaseAdapter {
 				resultp = data.get(position);
 				Intent intent = new Intent(context, SingleItemView.class);
 				// Pass all data rank
-				intent.putExtra("rank", resultp.get(MainActivity.RANK));
+				intent.putExtra("rank", resultp.get(MainActivity.TITLE));
 				// Pass all data country
-				intent.putExtra("country", resultp.get(MainActivity.COUNTRY));
+				intent.putExtra("country", resultp.get(MainActivity.DESCRIPTION));
 				// Pass all data population
 				intent.putExtra("population",resultp.get(MainActivity.POPULATION));
 				// Pass all data flag

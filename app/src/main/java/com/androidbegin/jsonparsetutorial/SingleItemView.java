@@ -22,14 +22,10 @@ public class SingleItemView extends Activity {
 		setContentView(R.layout.singleitemview);
 
 		Intent i = getIntent();
-		// Get the result of rank
-		rank = i.getStringExtra("rank");
-		// Get the result of country
-		country = i.getStringExtra("country");
-		// Get the result of population
-		population = i.getStringExtra("population");
-		// Get the result of flag
-		flag = i.getStringExtra("flag");
+		// Get the result of title
+		rank = i.getStringExtra("title");
+		// Get the result of description
+		country = i.getStringExtra("description");
 
 		// Locate the TextViews in singleitemview.xml
 		TextView txtrank = (TextView) findViewById(R.id.rank);

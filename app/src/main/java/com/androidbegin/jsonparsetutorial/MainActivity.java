@@ -20,10 +20,8 @@ public class MainActivity extends Activity {
 	ListViewAdapter adapter;
 	ProgressDialog mProgressDialog;
 	ArrayList<HashMap<String, String>> arraylist;
-	static String RANK = "rank";
-	static String COUNTRY = "country";
-	static String POPULATION = "population";
-	static String FLAG = "flag";
+	static String TITLE = "title";
+	static String DESCRIPTION = "description";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,20 +55,18 @@ public class MainActivity extends Activity {
 			arraylist = new ArrayList<HashMap<String, String>>();
 			// Retrieve JSON Objects from the given URL address
 			jsonobject = JSONfunctions
-					.getJSONfromURL("http://www.androidbegin.com/tutorial/jsonparsetutorial.txt");
+					.getJSONfromURL(" https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=0bde4e6810b2f5295df2270bc9ceda8e&user_id=145733563%40N08&format=json&nojsoncallback=1");
 
 			try {
 				// Locate the array name in JSON
-				jsonarray = jsonobject.getJSONArray("worldpopulation");
+				jsonarray = jsonobject.getJSONArray("photoset");
 
 				for (int i = 0; i < jsonarray.length(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
 					jsonobject = jsonarray.getJSONObject(i);
 					// Retrive JSON Objects
-					map.put("rank", jsonobject.getString("rank"));
-					map.put("country", jsonobject.getString("country"));
-					map.put("population", jsonobject.getString("population"));
-					map.put("flag", jsonobject.getString("flag"));
+					map.put("title", jsonobject.getString("title"));
+					map.put("description", jsonobject.getString("description"));
 					// Set the JSON Objects into the array
 					arraylist.add(map);
 				}
