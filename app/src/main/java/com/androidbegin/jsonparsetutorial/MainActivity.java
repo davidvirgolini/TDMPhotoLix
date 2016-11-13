@@ -59,14 +59,17 @@ public class MainActivity extends Activity {
 
 			try {
 				// Locate the array name in JSON
-				jsonarray = jsonobject.getJSONArray("photoset");
+				jsonobject = jsonobject.getJSONObject("photosets");
+				jsonarray =  jsonobject.getJSONArray("photoset");
 
 				for (int i = 0; i < jsonarray.length(); i++) {
 					HashMap<String, String> map = new HashMap<String, String>();
 					jsonobject = jsonarray.getJSONObject(i);
 					// Retrive JSON Objects
-					map.put("title", jsonobject.getString("title"));
-					map.put("description", jsonobject.getString("description"));
+                    JSONObject title = jsonobject.getJSONObject("title");
+					map.put("title", title.getString("_content"));
+                    JSONObject description = jsonobject.getJSONObject("description");
+					map.put("description", description.getString("_content"));
 					// Set the JSON Objects into the array
 					arraylist.add(map);
 				}

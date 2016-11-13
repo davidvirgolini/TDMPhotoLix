@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\Desktop\Cosas\TDMPhotoLix\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="1b15788f4fe29ef09d04c7f1379626fdfa39dc9d">
+        <dex dex="C:\Users\David\Desktop\Cosas\TDMPhotoLix\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_4347a9eb9ee00aea33c33d088c4c5eb0a880e826.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\David\Desktop\Cosas\TDMPhotoLix\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0b4d0a9d78de10a1e72bc5c681a5a00fd62ab5e3">
+        <dex dex="C:\Users\David\Desktop\Cosas\TDMPhotoLix\app\build\intermediates\pre-dexed\debug\instant-run_9d1cb192075bc9f23e2a29ee6d3bb1ad678c20b8.jar" />
+    </item>
+
+</items>

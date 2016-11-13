@@ -48,9 +48,6 @@ public class ListViewAdapter extends BaseAdapter {
 		// Declare Variables
 		TextView rank;
 		TextView country;
-		TextView population;
-		ImageView flag;
-
 		inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -59,8 +56,8 @@ public class ListViewAdapter extends BaseAdapter {
 		resultp = data.get(position);
 
 		// Locate the TextViews in listview_item.xml
-		rank = (TextView) itemView.findViewById(R.id.rank);
-		country = (TextView) itemView.findViewById(R.id.country);
+		rank = (TextView) itemView.findViewById(R.id.title);
+		country = (TextView) itemView.findViewById(R.id.description);
         // Capture position and set results to the TextViews
 		rank.setText(resultp.get(MainActivity.TITLE));
 		country.setText(resultp.get(MainActivity.DESCRIPTION));
