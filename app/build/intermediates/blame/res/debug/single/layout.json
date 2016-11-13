@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\build\\intermediates\\res\\merged\\debug\\layout\\singleitemview.xml",
+        "source": "C:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\src\\main\\res\\layout\\singleitemview.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_main.xml",
+        "source": "C:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\src\\main\\res\\layout\\listview_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_item.xml",
+        "source": "C:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\src\\main\\res\\layout\\listview_item.xml"
+    }
+]
