@@ -70,6 +70,7 @@ public class MainActivity extends Activity {
 					map.put("title", title.getString("_content"));
                     JSONObject description = jsonobject.getJSONObject("description");
 					map.put("description", description.getString("_content"));
+                    map.put("id", jsonobject.getString("id"));
 					// Set the JSON Objects into the array
 					arraylist.add(map);
 				}
