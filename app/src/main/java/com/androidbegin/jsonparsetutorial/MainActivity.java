@@ -40,8 +40,8 @@ public class MainActivity extends Activity {
 			super.onPreExecute();
 			// Create a progressdialog
 			mProgressDialog = new ProgressDialog(MainActivity.this);
-			// Set progressdialog title
-			mProgressDialog.setTitle("Android JSON Parse Tutorial");
+			// Set progressdialog titlee
+			mProgressDialog.setTitle("TDM PhotoLix");
 			// Set progressdialog message
 			mProgressDialog.setMessage("Loading...");
 			mProgressDialog.setIndeterminate(false);

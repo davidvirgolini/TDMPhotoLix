@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 13 17:11:46 ART 2016
+#Sun Nov 13 17:57:10 ART 2016
 2.base=C\:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\build\\intermediates\\res\\resources-debug.ap_
 5.file=C\:\\Users\\David\\Desktop\\Cosas\\TDMPhotoLix\\app\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
 5.set=ANDROID_RESOURCE

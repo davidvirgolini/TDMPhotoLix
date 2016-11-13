@@ -4,44 +4,32 @@
     android:layout_height="fill_parent" >
 
     <TextView
-        android:id="@+id/ranklabel"
+        android:id="@+id/titleLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ranklabel" />
+        android:text="@string/titlelabel" />
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/ranklabel" />
+        android:layout_toRightOf="@+id/titleLabel" />
 
     <TextView
-        android:id="@+id/countrylabel"
+        android:id="@+id/descriptionLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ranklabel"
-        android:text="@string/countrylabel" />
+        android:layout_below="@+id/titleLabel"
+        android:text="@string/descriptionLabel" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rank"
-        android:layout_toRightOf="@+id/countrylabel" />
+        android:layout_below="@+id/titleLabel"
+        android:layout_toRightOf="@+id/descriptionLabel" />
 
-    <TextView
-        android:id="@+id/populationlabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/countrylabel"
-        android:text="@string/populationlabel" />
 
-    <TextView
-        android:id="@+id/population"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/country"
-        android:layout_toRightOf="@+id/populationlabel" />
 
     <ImageView
         android:id="@+id/flag"

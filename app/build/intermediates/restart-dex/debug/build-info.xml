@@ -5,7 +5,7 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="87310830360354"
+    timestamp="89898432175259"
     token="1847995122593920746"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -27,7 +27,7 @@
         type="MAIN" />
 
     <build
-        timestamp="87310830360354"
+        timestamp="89898432175259"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\David\Desktop\Cosas\TDMPhotoLix\app\build\outputs\apk\app-debug.apk"
