@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 			arraylist = new ArrayList<HashMap<String, String>>();
 			// Retrieve JSON Objects from the given URL address
 			jsonobject = JSONfunctions
-					.getJSONfromURL(" https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=0bde4e6810b2f5295df2270bc9ceda8e&user_id=145733563%40N08&format=json&nojsoncallback=1");
+					.getJSONfromURL("https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=0bde4e6810b2f5295df2270bc9ceda8e&user_id=145733563%40N08&format=json&nojsoncallback=1");
 
 			try {
 				// Locate the array name in JSON
