@@ -10,13 +10,13 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListView;
+import android.widget.GridView;
 
 public class MainActivity extends Activity {
 	// Declare Variables
 	JSONObject jsonobject;
 	JSONArray jsonarray;
-	ListView listview;
+	GridView listview;
 	ListViewAdapter adapter;
 	ProgressDialog mProgressDialog;
 	ArrayList<HashMap<String, String>> arraylist;
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
 			arraylist = new ArrayList<HashMap<String, String>>();
 			// Retrieve JSON Objects from the given URL address
 			jsonobject = JSONfunctions
-					.getJSONfromURL("https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=0bde4e6810b2f5295df2270bc9ceda8e&user_id=145733563%40N08&format=json&nojsoncallback=1");
+					.getJSONfromURL("https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=32e23b107b0fdf5ce8ca78a78e8d5046&user_id=145733563%40N08&format=json&nojsoncallback=1");
 
 			try {
 				// Locate the array name in JSON
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onPostExecute(Void args) {
 			// Locate the listview in listview_main.xml
-			listview = (ListView) findViewById(R.id.listview);
+			listview = (GridView) findViewById(R.id.listview);
 			// Pass the results into ListViewAdapter.java
 			adapter = new ListViewAdapter(MainActivity.this, arraylist);
 			// Set the adapter to the ListView

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_border"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/titleLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/titlelabel" />
+        android:text="@string/titlelabel"
+        android:layout_below="@+id/primary"/>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/titleLabel" />
+        android:layout_toRightOf="@+id/titleLabel"
+        android:layout_alignBaseline="@id/titleLabel"/>
 
     <TextView
         android:id="@+id/descriptionLabel"
@@ -27,16 +31,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleLabel"
-        android:layout_toRightOf="@+id/descriptionLabel" />
+        android:layout_toRightOf="@+id/descriptionLabel"
+        android:layout_alignBaseline="@id/descriptionLabel"/>
 
 
 
-    <ImageView
+<!--    <ImageView
         android:id="@+id/flag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:background="#000000"
-        android:padding="1dp" />
+        android:padding="1dp" />-->
+
+    <ImageView
+        android:id="@+id/primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher"
+        />
 
 </RelativeLayout>
