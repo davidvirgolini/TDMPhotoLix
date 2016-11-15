@@ -79,6 +79,12 @@ public class ListViewAdapter extends BaseAdapter {
 			public void onClick(View arg0) {
 				// Get the position
 				resultp = data.get(position);
+				Bundle arguments = new Bundle();
+				arguments.putString("id", MainActivity.ID);
+				PhotoListView fragment = PhotoListView.newInstance(arguments);
+				FragmentTransaction ft = ((MainActivity) context).getFragmentManager().beginTransaction();
+				ft.replace(R.id.layoutPhotoListview, fragment);
+				ft.commit();
 
 			}
 		});

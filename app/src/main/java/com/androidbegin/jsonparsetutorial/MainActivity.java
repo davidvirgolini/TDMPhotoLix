@@ -8,11 +8,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
     // Declare Variables
@@ -39,6 +43,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.listview_main);
         // Execute DownloadJSON AsyncTask
         new DownloadJSON().execute();
+
     }
 
     // DownloadJSON AsyncTask
@@ -110,6 +115,7 @@ public class MainActivity extends Activity {
             listview.setAdapter(adapter);
             // Close the progressdialog
             mProgressDialog.dismiss();
+
         }
     }
 }
