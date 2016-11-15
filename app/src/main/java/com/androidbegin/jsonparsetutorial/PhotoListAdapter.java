@@ -1,6 +1,7 @@
 package com.androidbegin.jsonparsetutorial;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ public class PhotoListAdapter extends BaseAdapter{
     public long getItemId(int position) {
         return 0;
     }
+
     public View getView(final int position, View convertView, ViewGroup parent) {
         ImageView image;
         inflater = (LayoutInflater) context
@@ -50,12 +52,24 @@ public class PhotoListAdapter extends BaseAdapter{
 
         View itemView = inflater.inflate(R.layout.photo_list_item_view, parent, false);
         // Locate the ImageView in listview_item.xml
-        image = (ImageView) itemView.findViewById(R.id.primary);
+        image = (ImageView) itemView.findViewById(R.id.photoImage);
         // Get the position
         resultp = data.get(position);
         //Passes image url into ImageLoader.class
         imageLoader.DisplayImage(resultp.get(MainActivity.URL), image);
+        itemView.setOnClickListener(new View.OnClickListener() {
 
-        return null;
+            @Override
+            public void onClick(View arg0) {
+                // Get the position
+                resultp = data.get(position);
+                Intent intent = new Intent(context, SingleItemView.class);
+                // Pass all data id
+                intent.putExtra(MainActivity.ID, resultp.get(MainActivity.ID));
+                context.startActivity(intent);
+
+            }
+        });
+        return itemView;
     }
 }

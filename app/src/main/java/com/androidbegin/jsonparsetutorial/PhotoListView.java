@@ -48,6 +48,17 @@ public class PhotoListView extends Fragment {
     static String FARM = "farm";
     static String URL = "url";
 
+    public static PhotoListView newInstance(Bundle arguments){
+        PhotoListView fragment = new PhotoListView();
+        if(arguments != null){
+            fragment.setArguments(arguments);
+        }
+        return fragment;
+
+    }
+    public  PhotoListView(){
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

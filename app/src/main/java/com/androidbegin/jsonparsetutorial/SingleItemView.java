@@ -21,8 +21,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static com.androidbegin.jsonparsetutorial.R.id.listview;
-
 public class SingleItemView extends Fragment {
 	// Declare Variables
 	String title;
@@ -37,7 +35,7 @@ public class SingleItemView extends Fragment {
 	String flag;
 	//ImageLoader imageLoader = new ImageLoader(this);
 
-	@Override
+    @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 						 Bundle savedInstanceState)  {
 		rootView = inflater.inflate(R.layout.singleitemview, container, false);

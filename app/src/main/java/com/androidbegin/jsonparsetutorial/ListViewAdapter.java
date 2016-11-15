@@ -3,8 +3,10 @@ package com.androidbegin.jsonparsetutorial;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -77,15 +79,6 @@ public class ListViewAdapter extends BaseAdapter {
 			public void onClick(View arg0) {
 				// Get the position
 				resultp = data.get(position);
-				Intent intent = new Intent(context, SingleItemView.class);
-				// Pass all data id
-				intent.putExtra(MainActivity.ID, resultp.get(MainActivity.ID));
-				// Pass all data title
-				intent.putExtra(MainActivity.TITLE, resultp.get(MainActivity.TITLE));
-				// Pass all data description
-				intent.putExtra(MainActivity.DESCRIPTION, resultp.get(MainActivity.DESCRIPTION));
-				// Pass all data population
-				context.startActivity(intent);
 
 			}
 		});
