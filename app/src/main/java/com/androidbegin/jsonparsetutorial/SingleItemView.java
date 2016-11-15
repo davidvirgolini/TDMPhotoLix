@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class SingleItemView extends Fragment {
     JSONArray jsonarray;
     View rootView;
     ListViewAdapter adapter;
-    ListView listview;
+    GridView listview;
 	String flag;
 	//ImageLoader imageLoader = new ImageLoader(this);
 
@@ -114,7 +115,7 @@ public class SingleItemView extends Fragment {
         @Override
         protected void onPostExecute(Void args) {
             // Locate the listview in listview_main.xml
-            listview = (ListView) rootView.findViewById(R.id.listview);
+            listview = (GridView) rootView.findViewById(R.id.listview);
             // Pass the results into ListViewAdapter.java
             adapter = new ListViewAdapter(getActivity(), arraylist);
             // Set the adapter to the ListView
