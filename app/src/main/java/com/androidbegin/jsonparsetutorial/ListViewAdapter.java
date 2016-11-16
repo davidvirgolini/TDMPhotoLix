@@ -3,6 +3,7 @@ package com.androidbegin.jsonparsetutorial;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +15,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ListViewAdapter extends BaseAdapter {
-
-	// Declare Variables
+    // Declare Variables
 	Context context;
 	LayoutInflater inflater;
 	ArrayList<HashMap<String, String>> data;
@@ -80,14 +81,15 @@ public class ListViewAdapter extends BaseAdapter {
 				// Get the position
 				resultp = data.get(position);
 				Bundle arguments = new Bundle();
-				arguments.putString("id", MainActivity.ID);
+				arguments.putString(MainActivity.ID, resultp.get(MainActivity.ID));
 				PhotoListView fragment = PhotoListView.newInstance(arguments);
 				FragmentTransaction ft = ((MainActivity) context).getFragmentManager().beginTransaction();
-				ft.replace(R.id.layoutPhotoListview, fragment);
+				ft.replace(R.id.listview, fragment);
 				ft.commit();
 
 			}
 		});
+
 		return itemView;
 	}
 }
