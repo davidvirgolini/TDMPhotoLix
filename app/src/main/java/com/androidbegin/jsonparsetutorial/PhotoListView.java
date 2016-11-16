@@ -41,36 +41,34 @@ public class PhotoListView extends Fragment {
     ProgressDialog mProgressDialog;
     GridView listview;
     PhotoListAdapter adapter;
-    static String ID="id";
+    static String ID = "id";
     static String PRIMARY = "primary";
     static String SECRET = "secret";
     static String SERVER = "server";
     static String FARM = "farm";
     static String URL = "url";
 
-    public static PhotoListView newInstance(Bundle arguments){
+    public static PhotoListView newInstance(Bundle arguments) {
         PhotoListView fragment = new PhotoListView();
-        if(arguments != null){
+        if (arguments != null) {
             fragment.setArguments(arguments);
         }
         return fragment;
 
     }
-    public  PhotoListView(){
+
+    public PhotoListView() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)  {
-        rootView = inflater.inflate(R.layout.listview_main, container, false);//create objet structure
-        Intent intent = getActivity().getIntent();
-        id=intent.getStringExtra(ID);
-        imageView = (ImageView) rootView.findViewById(R.id.photoImage);
-        imageLoader.DisplayImage(imageUrl, imageView);
+                             Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.photo_list_items, container, false); //create object structure
         new DownloadJSON().execute();
-       return rootView;
+        return rootView;
     }
+
     private class DownloadJSON extends AsyncTask<Void, Void, Void> {
 
         @Override
@@ -93,31 +91,29 @@ public class PhotoListView extends Fragment {
             arraylist = new ArrayList<HashMap<String, String>>();
             // Retrieve JSON Objects from the given URL address
             jsonobject = JSONfunctions
-                    .getJSONfromURL("https://www.flickr.com/services/api/flickr.photosets.getPhotos.html");
+                    .getJSONfromURL("https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=bc905f9c888d53d19efcf7eeeee10f23&photoset_id=" + getArguments().getString(MainActivity.ID) + "&user_id=145733563%40N08&format=json&nojsoncallback=1");
 
             try {
                 // Locate the array name in JSON
-                jsonobject =  jsonobject.getJSONObject("photoset");
+                jsonobject = jsonobject.getJSONObject("photoset");
                 jsonarray = jsonobject.getJSONArray("photo");
 
-              if(jsonobject.getString(ID).equals(id)) {
-                  for (int i = 0; i < jsonarray.length(); i++) {
-                      HashMap<String, String> map = new HashMap<String, String>();
-                      jsonobject = jsonarray.getJSONObject(i);
-                      //Retrive JSON Objects
-                      map.put(ID, jsonobject.getString(ID));
-                      String primary = jsonobject.getString(PRIMARY);
-                      String secret = jsonobject.getString(SECRET);
-                      String server = jsonobject.getString(SERVER);
-                      String farm = jsonobject.getString(FARM);
-                      //build image url
-                      url = "https://farm" + farm + ".staticflickr.com/" + server +
-                              "/" + primary + "_" + secret + ".jpg";
-                       // Set the JSON Objects into the array
-                      map.put(URL, url);
-                      arraylist.add(map);
-                  }
-              }
+                for (int i = 0; i < jsonarray.length(); i++) {
+                    HashMap<String, String> map = new HashMap<String, String>();
+                    jsonobject = jsonarray.getJSONObject(i);
+                    //Retrive JSON Objects
+                    map.put(ID, jsonobject.getString(ID));
+                    String secret = jsonobject.getString(SECRET);
+                    String server = jsonobject.getString(SERVER);
+                    String farm = jsonobject.getString(FARM);
+                    //build image url
+                    url = "https://farm" + farm + ".staticflickr.com/" + server +
+                            "/" + jsonobject.getString(ID) + "_" + secret + ".jpg";
+                    // Set the JSON Objects into the array
+                    map.put(URL, url);
+                    arraylist.add(map);
+                }
+
             } catch (JSONException e) {
                 Log.e("Error", e.getMessage());
                 e.printStackTrace();
@@ -128,13 +124,16 @@ public class PhotoListView extends Fragment {
         @Override
         protected void onPostExecute(Void args) {
             // Locate the listview in listview_main.xml
-            listview = (GridView) rootView.findViewById(R.id.listview);
+            listview = (GridView) rootView.findViewById(R.id.layoutPhotoListview);
             // Pass the results into ListViewAdapter.java
             adapter = new PhotoListAdapter(getActivity(), arraylist);
             // Set the adapter to the ListView
             listview.setAdapter(adapter);
             // Close the progressdialog
             mProgressDialog.dismiss();
+            //gridView.setAdapter(adapter);
+            //imageLoader.DisplayImage(imageUrl, imageView);
+            //GridView gridView = (GridView) rootView.findViewById(R.id.layoutPhotoListview);
         }
     }
 }
